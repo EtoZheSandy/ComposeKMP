@@ -18,13 +18,15 @@ import composekmp.composeapp.generated.resources.compose_multiplatform
 
 @Composable
 @Preview
-fun App() {
+fun App(
+    batteryManager: BatteryManager
+) {
     MaterialTheme {
         Box(
             modifier = Modifier.fillMaxSize(),
             contentAlignment = Alignment.Center
         ) {
-            Text(text = "Привет мир)")
+            Text(text = "Заряд батареи ${batteryManager.getBatteryLevel()}")
         }
 
 //        var showContent by remember { mutableStateOf(false) }
